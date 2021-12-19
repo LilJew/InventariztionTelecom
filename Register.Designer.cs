@@ -62,7 +62,7 @@ namespace InventariztionTelecom
             // 
             this.regBtn.BackColor = System.Drawing.Color.LightGreen;
             this.regBtn.Image = global::InventariztionTelecom.Properties.Resources.back;
-            this.regBtn.Location = new System.Drawing.Point(87, 571);
+            this.regBtn.Location = new System.Drawing.Point(101, 571);
             this.regBtn.Name = "regBtn";
             this.regBtn.Size = new System.Drawing.Size(170, 71);
             this.regBtn.TabIndex = 24;
@@ -73,7 +73,7 @@ namespace InventariztionTelecom
             // 
             this.loginButton.BackColor = System.Drawing.Color.LightGreen;
             this.loginButton.Image = global::InventariztionTelecom.Properties.Resources.register1;
-            this.loginButton.Location = new System.Drawing.Point(96, 494);
+            this.loginButton.Location = new System.Drawing.Point(101, 494);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(170, 71);
             this.loginButton.TabIndex = 23;
@@ -118,7 +118,7 @@ namespace InventariztionTelecom
             this.passField.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.passField.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.passField.ForeColor = System.Drawing.Color.Green;
-            this.passField.Location = new System.Drawing.Point(101, 418);
+            this.passField.Location = new System.Drawing.Point(106, 418);
             this.passField.Multiline = true;
             this.passField.Name = "passField";
             this.passField.PasswordChar = '*';
@@ -144,7 +144,7 @@ namespace InventariztionTelecom
             this.loginField.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.loginField.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.loginField.ForeColor = System.Drawing.Color.Green;
-            this.loginField.Location = new System.Drawing.Point(101, 299);
+            this.loginField.Location = new System.Drawing.Point(104, 298);
             this.loginField.Multiline = true;
             this.loginField.Name = "loginField";
             this.loginField.Size = new System.Drawing.Size(175, 38);
@@ -220,10 +220,10 @@ namespace InventariztionTelecom
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox2.ForeColor = System.Drawing.Color.Green;
-            this.textBox2.Location = new System.Drawing.Point(104, 120);
+            this.textBox2.Location = new System.Drawing.Point(101, 120);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(175, 38);
+            this.textBox2.Size = new System.Drawing.Size(170, 38);
             this.textBox2.TabIndex = 29;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
