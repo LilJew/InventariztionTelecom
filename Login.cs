@@ -105,7 +105,7 @@ namespace InventariztionTelecom
                     userRoleCheck();
                 }
 
-                else MessageBox.Show("PoshelNahuy");
+                else MessageBox.Show("Тебя не звали!!");
 
 
 
