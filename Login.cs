@@ -74,23 +74,24 @@ namespace InventariztionTelecom
 
         private void loginButton_Click(object sender, EventArgs e)
         {
+            DataBase db = new DataBase();
             string userLogin = loginField.Text;
             string userPass = passField.Text;
-            //string sql = "SELECT* FROM [USERS] WHERE [USERNAME] = @userLogin  AND [PASSWORD] = @userPass";
-            string con = @"Server=localhost\SQLEXPRESS;Database=telecom;Trusted_Connection=True;";
+            //string sql = "SELECT * FROM [USERS] WHERE [USERNAME] = @userLogin  AND [PASSWORD] = @userPass";
+            
             
             try
             {
                 string sql = "SELECT * FROM USERS WHERE USERNAME LIKE @userLogin  AND PASSWORD LIKE @userPass";
-                SqlConnection sqlConnection = new SqlConnection(con);
-                sqlConnection.Open();
+
+                db.openConnection();
 
                 DataTable table = new DataTable();
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 
 
 
-                SqlCommand command = new SqlCommand(sql, sqlConnection);
+                SqlCommand command = new SqlCommand(sql);
 
                 
                 command.Parameters.Add("@userLogin", SqlDbType.VarChar, 50).Value = userLogin;

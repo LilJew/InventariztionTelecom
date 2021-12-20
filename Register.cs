@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace InventariztionTelecom
 {
@@ -43,7 +44,7 @@ namespace InventariztionTelecom
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
-
+       
 
         private void exitBtn_Click(object sender, EventArgs e)
         {
@@ -56,13 +57,47 @@ namespace InventariztionTelecom
             Login login = new Login();
             login.Show();
         }
-
+        
         private void CreateAccountButton_Click(object sender, EventArgs e)
         {
             string regName = regNameField.Text;
             string regSurname = regSurnameField.Text;
             string regLogin = regLoginField.Text;
             string regPass = regPassField.Text;
+            string defaultRole = "user";
+            DataBase db = new DataBase();
+            try
+            {
+                string sql = "INSERT INTO USERS (USERNAME,PASSWORD,NAME,SURNAME,USER_ROLE) VALUES (@regLogin,  @regPass,  @regName,  @regSurname,  @defaultRole)";
+
+
+                db.openConnection();
+                SqlCommand command = new SqlCommand(sql,db.getConnection());
+                command.Parameters.Add("@regLogin", SqlDbType.VarChar, 50).Value = regLogin;
+                command.Parameters.Add("@regPass", SqlDbType.VarChar, 50).Value = regPass;
+                command.Parameters.Add("@regName", SqlDbType.VarChar, 50).Value = regName;
+                command.Parameters.Add("@regSurname", SqlDbType.VarChar, 50).Value = regSurname;
+                command.Parameters.Add("@defaultRole", SqlDbType.VarChar, 50).Value = defaultRole;
+
+                
+               if (command.ExecuteNonQuery() == 1)
+                {
+                    
+                    MessageBox.Show("Аккаунт создан", "Успех!");
+                }
+
+                db.closeConnection();
+               
+
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
+        
     }
 }
