@@ -56,5 +56,13 @@ namespace InventariztionTelecom
             Login login = new Login();
             login.Show();
         }
+
+        private void CreateAccountButton_Click(object sender, EventArgs e)
+        {
+            string regName = regNameField.Text;
+            string regSurname = regSurnameField.Text;
+            string regLogin = regLoginField.Text;
+            string regPass = regPassField.Text;
+        }
     }
 }

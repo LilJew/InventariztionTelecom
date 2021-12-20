@@ -30,25 +30,25 @@ namespace InventariztionTelecom
         private void InitializeComponent()
         {
             this.regBtn = new System.Windows.Forms.PictureBox();
-            this.loginButton = new System.Windows.Forms.PictureBox();
+            this.CreateAccountButton = new System.Windows.Forms.PictureBox();
             this.exitBtn = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.passField = new System.Windows.Forms.TextBox();
+            this.regPassField = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.loginField = new System.Windows.Forms.TextBox();
+            this.regLoginField = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.regNameField = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.regSurnameField = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.regBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.loginButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CreateAccountButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.exitBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -69,15 +69,16 @@ namespace InventariztionTelecom
             this.regBtn.TabStop = false;
             this.regBtn.Click += new System.EventHandler(this.regBtn_Click);
             // 
-            // loginButton
+            // CreateAccountButton
             // 
-            this.loginButton.BackColor = System.Drawing.Color.LightGreen;
-            this.loginButton.Image = global::InventariztionTelecom.Properties.Resources.register1;
-            this.loginButton.Location = new System.Drawing.Point(101, 494);
-            this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(170, 71);
-            this.loginButton.TabIndex = 23;
-            this.loginButton.TabStop = false;
+            this.CreateAccountButton.BackColor = System.Drawing.Color.LightGreen;
+            this.CreateAccountButton.Image = global::InventariztionTelecom.Properties.Resources.Create_account;
+            this.CreateAccountButton.Location = new System.Drawing.Point(101, 494);
+            this.CreateAccountButton.Name = "CreateAccountButton";
+            this.CreateAccountButton.Size = new System.Drawing.Size(170, 71);
+            this.CreateAccountButton.TabIndex = 23;
+            this.CreateAccountButton.TabStop = false;
+            this.CreateAccountButton.Click += new System.EventHandler(this.CreateAccountButton_Click);
             // 
             // exitBtn
             // 
@@ -112,19 +113,19 @@ namespace InventariztionTelecom
             this.pictureBox3.TabIndex = 20;
             this.pictureBox3.TabStop = false;
             // 
-            // passField
+            // regPassField
             // 
-            this.passField.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.passField.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.passField.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.passField.ForeColor = System.Drawing.Color.Green;
-            this.passField.Location = new System.Drawing.Point(106, 418);
-            this.passField.Multiline = true;
-            this.passField.Name = "passField";
-            this.passField.PasswordChar = '*';
-            this.passField.Size = new System.Drawing.Size(165, 38);
-            this.passField.TabIndex = 19;
-            this.passField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.regPassField.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.regPassField.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.regPassField.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.regPassField.ForeColor = System.Drawing.Color.Green;
+            this.regPassField.Location = new System.Drawing.Point(106, 418);
+            this.regPassField.Multiline = true;
+            this.regPassField.Name = "regPassField";
+            this.regPassField.PasswordChar = '*';
+            this.regPassField.Size = new System.Drawing.Size(165, 38);
+            this.regPassField.TabIndex = 19;
+            this.regPassField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
@@ -138,18 +139,18 @@ namespace InventariztionTelecom
             this.label3.TabIndex = 18;
             this.label3.Text = "Пароль";
             // 
-            // loginField
+            // regLoginField
             // 
-            this.loginField.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.loginField.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.loginField.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.loginField.ForeColor = System.Drawing.Color.Green;
-            this.loginField.Location = new System.Drawing.Point(104, 298);
-            this.loginField.Multiline = true;
-            this.loginField.Name = "loginField";
-            this.loginField.Size = new System.Drawing.Size(175, 38);
-            this.loginField.TabIndex = 17;
-            this.loginField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.regLoginField.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.regLoginField.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.regLoginField.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.regLoginField.ForeColor = System.Drawing.Color.Green;
+            this.regLoginField.Location = new System.Drawing.Point(104, 298);
+            this.regLoginField.Multiline = true;
+            this.regLoginField.Name = "regLoginField";
+            this.regLoginField.Size = new System.Drawing.Size(175, 38);
+            this.regLoginField.TabIndex = 17;
+            this.regLoginField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -214,18 +215,18 @@ namespace InventariztionTelecom
             this.pictureBox7.TabIndex = 34;
             this.pictureBox7.TabStop = false;
             // 
-            // textBox2
+            // regNameField
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.ForeColor = System.Drawing.Color.Green;
-            this.textBox2.Location = new System.Drawing.Point(101, 120);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(170, 38);
-            this.textBox2.TabIndex = 29;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.regNameField.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.regNameField.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.regNameField.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.regNameField.ForeColor = System.Drawing.Color.Green;
+            this.regNameField.Location = new System.Drawing.Point(101, 120);
+            this.regNameField.Multiline = true;
+            this.regNameField.Name = "regNameField";
+            this.regNameField.Size = new System.Drawing.Size(170, 38);
+            this.regNameField.TabIndex = 29;
+            this.regNameField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 
@@ -239,18 +240,18 @@ namespace InventariztionTelecom
             this.label5.TabIndex = 28;
             this.label5.Text = "Имя";
             // 
-            // textBox1
+            // regSurnameField
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.ForeColor = System.Drawing.Color.Green;
-            this.textBox1.Location = new System.Drawing.Point(104, 204);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(175, 38);
-            this.textBox1.TabIndex = 38;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.regSurnameField.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.regSurnameField.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.regSurnameField.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.regSurnameField.ForeColor = System.Drawing.Color.Green;
+            this.regSurnameField.Location = new System.Drawing.Point(104, 204);
+            this.regSurnameField.Multiline = true;
+            this.regSurnameField.Name = "regSurnameField";
+            this.regSurnameField.Size = new System.Drawing.Size(175, 38);
+            this.regSurnameField.TabIndex = 38;
+            this.regSurnameField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
             // 
@@ -270,20 +271,20 @@ namespace InventariztionTelecom
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(460, 654);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.regSurnameField);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.regNameField);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.regBtn);
-            this.Controls.Add(this.loginButton);
+            this.Controls.Add(this.CreateAccountButton);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.passField);
+            this.Controls.Add(this.regPassField);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.loginField);
+            this.Controls.Add(this.regLoginField);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
@@ -292,7 +293,7 @@ namespace InventariztionTelecom
             this.Name = "Register";
             this.Text = "Register";
             ((System.ComponentModel.ISupportInitialize)(this.regBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.loginButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CreateAccountButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.exitBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -308,22 +309,22 @@ namespace InventariztionTelecom
         #endregion
 
         private System.Windows.Forms.PictureBox regBtn;
-        private System.Windows.Forms.PictureBox loginButton;
+        private System.Windows.Forms.PictureBox CreateAccountButton;
         private System.Windows.Forms.PictureBox exitBtn;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.TextBox passField;
+        private System.Windows.Forms.TextBox regPassField;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox loginField;
+        private System.Windows.Forms.TextBox regLoginField;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox regNameField;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox regSurnameField;
         private System.Windows.Forms.Label label4;
     }
 }
