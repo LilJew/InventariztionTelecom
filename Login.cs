@@ -91,7 +91,7 @@ namespace InventariztionTelecom
                 
 
 
-                SqlCommand command = new SqlCommand(sql);
+                SqlCommand command = new SqlCommand(sql, db.getConnection());
 
                 
                 command.Parameters.Add("@userLogin", SqlDbType.VarChar, 50).Value = userLogin;
@@ -119,6 +119,7 @@ namespace InventariztionTelecom
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                db.closeConnection();
             }
             
            
