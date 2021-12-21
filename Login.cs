@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -76,7 +77,7 @@ namespace InventariztionTelecom
         {
             DataBase db = new DataBase();
             string userLogin = loginField.Text;
-            string userPass = passField.Text;
+            string userPass = GetHash(passField.Text);
             //string sql = "SELECT * FROM [USERS] WHERE [USERNAME] = @userLogin  AND [PASSWORD] = @userPass";
 
             
@@ -137,6 +138,12 @@ namespace InventariztionTelecom
 
 
 
+        }
+        public string GetHash(string input)
+        {
+            var md5 = MD5.Create();
+            var hash = md5.ComputeHash(Encoding.UTF8.GetBytes(input));
+            return Convert.ToBase64String(hash);
         }
     }
 }

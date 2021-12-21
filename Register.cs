@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Security.Cryptography;
 
 namespace InventariztionTelecom
 {
@@ -64,7 +65,7 @@ namespace InventariztionTelecom
             string regName = regNameField.Text;
             string regSurname = regSurnameField.Text;
             string regLogin = regLoginField.Text;
-            string regPass = regPassField.Text;
+            string regPass = GetHash(regPassField.Text);
             string defaultRole = "user";
           
             
@@ -169,6 +170,13 @@ namespace InventariztionTelecom
         isFalse: return false;
 
         }
-        
+
+        public string GetHash(string input)
+        {
+            var md5 = MD5.Create();
+            var hash = md5.ComputeHash(Encoding.UTF8.GetBytes(input));
+            return Convert.ToBase64String(hash);
+        }
+
     }
 }
