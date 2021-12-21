@@ -78,14 +78,20 @@ namespace InventariztionTelecom
             string userLogin = loginField.Text;
             string userPass = passField.Text;
             //string sql = "SELECT * FROM [USERS] WHERE [USERNAME] = @userLogin  AND [PASSWORD] = @userPass";
-            
+
             
             try
             {
+                if (loginField.Text == "" || passField.Text == "")
+                {
+                    
+                }
+
 
                 string sql = "SELECT * FROM USERS WHERE USERNAME LIKE @userLogin  AND PASSWORD LIKE @userPass";
 
                 db.openConnection();
+                
 
                 DataTable table = new DataTable();
                 SqlDataAdapter adapter = new SqlDataAdapter();
@@ -105,7 +111,7 @@ namespace InventariztionTelecom
                 {
                     MessageBox.Show("Успешный логин");
                     userRoleCheck();
-                    db.closeConnection();
+                    
                 }
 
                 else MessageBox.Show("Произошла ошибка при авторизации\n" +
@@ -124,7 +130,7 @@ namespace InventariztionTelecom
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                db.closeConnection();
+                
             }
             
            

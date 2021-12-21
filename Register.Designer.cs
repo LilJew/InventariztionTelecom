@@ -47,6 +47,7 @@ namespace InventariztionTelecom
             this.label5 = new System.Windows.Forms.Label();
             this.regSurnameField = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.errorLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.regBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CreateAccountButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.exitBtn)).BeginInit();
@@ -266,11 +267,22 @@ namespace InventariztionTelecom
             this.label4.Text = "Фамилия";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // errorLabel
+            // 
+            this.errorLabel.AutoSize = true;
+            this.errorLabel.Location = new System.Drawing.Point(268, 85);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(38, 15);
+            this.errorLabel.TabIndex = 39;
+            this.errorLabel.Text = "label6";
+            this.errorLabel.Visible = false;
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(460, 654);
+            this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.regSurnameField);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox5);
@@ -326,5 +338,6 @@ namespace InventariztionTelecom
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox regSurnameField;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label errorLabel;
     }
 }

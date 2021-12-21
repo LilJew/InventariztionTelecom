@@ -66,16 +66,22 @@ namespace InventariztionTelecom
             string regLogin = regLoginField.Text;
             string regPass = regPassField.Text;
             string defaultRole = "user";
+          
+            
             DataBase db = new DataBase();
 
             if (isUserExists()) return;
+            
             try
             {
-               
-                string sql = "INSERT INTO USERS (USERNAME,PASSWORD,NAME,SURNAME,USER_ROLE) VALUES (@regLogin,  @regPass,  @regName,  @regSurname,  @defaultRole)";
+                
+                
 
+                string sql = "INSERT INTO USERS (USERNAME,PASSWORD,NAME,SURNAME,USER_ROLE) VALUES (@regLogin,  @regPass,  @regName,  @regSurname,  @defaultRole)";
+               
 
                 db.openConnection();
+                
                 SqlCommand command = new SqlCommand(sql, db.getConnection());
                 command.Parameters.Add("@regLogin", SqlDbType.VarChar, 50).Value = regLogin;
                 command.Parameters.Add("@regPass", SqlDbType.VarChar, 50).Value = regPass;
@@ -83,14 +89,25 @@ namespace InventariztionTelecom
                 command.Parameters.Add("@regSurname", SqlDbType.VarChar, 50).Value = regSurname;
                 command.Parameters.Add("@defaultRole", SqlDbType.VarChar, 50).Value = defaultRole;
 
-
-                if (command.ExecuteNonQuery() == 1)
+                if (isAllFieldsFilled())
                 {
+                    MessageBox.Show("Успех");
+                    command.ExecuteNonQuery();
 
-                    MessageBox.Show("Аккаунт создан", "Успех!");
+
                 }
+                else
+                {
+                    this.errorLabel.Visible = true;
+                    this.errorLabel.Text = "Обнаружены пустые поля";
+                    this.errorLabel.ForeColor = Color.DarkRed;
+                    this.errorLabel.BackColor = Color.LightGreen;
+                    command.Cancel();
+                }
+                
 
-                db.closeConnection();
+              
+
 
 
 
@@ -99,8 +116,9 @@ namespace InventariztionTelecom
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                db.closeConnection();
             }
-
+            
         }
         //Проверка на совпадение логинов при регистрации
         public Boolean isUserExists()
@@ -133,5 +151,24 @@ namespace InventariztionTelecom
             else return false;
 
         }
+        public Boolean isAllFieldsFilled() 
+        {
+            foreach (Control control in this.Controls)
+            {
+                if(control.GetType() == typeof(TextBox))
+                {
+
+                    if (control.Text == "")
+                    {
+                        goto isFalse;
+                    }
+                    else goto isTrue;
+                }
+            }
+        isTrue: return true;
+        isFalse: return false;
+
+        }
+        
     }
 }
