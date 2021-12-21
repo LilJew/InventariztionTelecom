@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using System.Security.Cryptography;
+
 
 namespace InventariztionTelecom
 {
@@ -61,15 +61,15 @@ namespace InventariztionTelecom
 
         private void CreateAccountButton_Click(object sender, EventArgs e)
         {
-            
+            DataBase db = new DataBase();
             string regName = regNameField.Text;
             string regSurname = regSurnameField.Text;
             string regLogin = regLoginField.Text;
-            string regPass = GetHash(regPassField.Text);
+            string regPass = db.GetHash(regPassField.Text);
             string defaultRole = "user";
           
             
-            DataBase db = new DataBase();
+            
 
             if (isUserExists()) return;
             
@@ -171,12 +171,7 @@ namespace InventariztionTelecom
 
         }
 
-        public string GetHash(string input)
-        {
-            var md5 = MD5.Create();
-            var hash = md5.ComputeHash(Encoding.UTF8.GetBytes(input));
-            return Convert.ToBase64String(hash);
-        }
+        
 
     }
 }
