@@ -70,6 +70,21 @@ namespace InventariztionTelecom
         //Меторд проверяющий Админские привилегии
         public void userRoleCheck()
         {
+            string userName = loginField.Text;
+            DataBase db = new DataBase();
+            db.openConnection();
+            string sql = "SELECT USER_ROLE FROM USERS WHERE USERNAME = @un";
+            SqlParameter nameParam = new SqlParameter("@un", userName);
+            SqlCommand command = new SqlCommand(sql, db.getConnection());
+            command.Parameters.Add(nameParam);
+            string Form_Role = command.ExecuteScalar().ToString();
+            switch (Form_Role)
+            {
+                case "admin": Form.ActiveForm.Close();break;
+            }
+
+
+            db.closeConnection();
 
         }
 
@@ -77,7 +92,7 @@ namespace InventariztionTelecom
         {
             DataBase db = new DataBase();
             string userLogin = loginField.Text;
-            string userPass = db.GetHash(passField.Text);
+            string userPass = db.getHash(passField.Text);
             //string sql = "SELECT * FROM [USERS] WHERE [USERNAME] = @userLogin  AND [PASSWORD] = @userPass";
 
             

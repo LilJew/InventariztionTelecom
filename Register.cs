@@ -65,7 +65,7 @@ namespace InventariztionTelecom
             string regName = regNameField.Text;
             string regSurname = regSurnameField.Text;
             string regLogin = regLoginField.Text;
-            string regPass = db.GetHash(regPassField.Text);
+            string regPass = db.getHash(regPassField.Text);
             string defaultRole = "user";
           
             
@@ -92,8 +92,11 @@ namespace InventariztionTelecom
 
                 if (isAllFieldsFilled())
                 {
-                    MessageBox.Show("Успех");
+                    MessageBox.Show("Успех, Войдите в программу под своими данными");
                     command.ExecuteNonQuery();
+                    ActiveForm.Hide();
+                    Login login = new Login();
+                    login.Show();
 
 
                 }

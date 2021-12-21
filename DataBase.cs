@@ -32,7 +32,7 @@ namespace InventariztionTelecom
             return connection;
         }
 
-        public string GetHash(string input)
+        public string getHash(string input)
         {
             var md5 = MD5.Create();
             var hash = md5.ComputeHash(Encoding.UTF8.GetBytes(input));
