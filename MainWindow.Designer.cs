@@ -30,6 +30,7 @@ namespace InventariztionTelecom
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.adminRemoveAllRecords = new System.Windows.Forms.PictureBox();
             this.convertExcelBtn = new System.Windows.Forms.PictureBox();
@@ -40,8 +41,9 @@ namespace InventariztionTelecom
             this.deleteRecordBtn = new System.Windows.Forms.PictureBox();
             this.addRecordBtn = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adminRemoveAllRecords)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.convertExcelBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sortBtn)).BeginInit();
@@ -49,12 +51,12 @@ namespace InventariztionTelecom
             ((System.ComponentModel.ISupportInitialize)(this.deleteRecordBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addRecordBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.adminRemoveAllRecords);
@@ -70,7 +72,15 @@ namespace InventariztionTelecom
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(841, 578);
             this.panel1.TabIndex = 0;
-           
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.DodgerBlue;
+            this.pictureBox2.Location = new System.Drawing.Point(150, 385);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(85, 29);
+            this.pictureBox2.TabIndex = 10;
+            this.pictureBox2.TabStop = false;
             // 
             // textBox1
             // 
@@ -168,14 +178,14 @@ namespace InventariztionTelecom
             this.dataGridView1.Size = new System.Drawing.Size(835, 321);
             this.dataGridView1.TabIndex = 0;
             // 
-            // pictureBox2
+            // label2
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.DodgerBlue;
-            this.pictureBox2.Location = new System.Drawing.Point(150, 385);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(85, 29);
-            this.pictureBox2.TabIndex = 10;
-            this.pictureBox2.TabStop = false;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(132, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 15);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "label2";
             // 
             // MainWindow
             // 
@@ -186,8 +196,10 @@ namespace InventariztionTelecom
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainWindow";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.MainWindow_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.adminRemoveAllRecords)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.convertExcelBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sortBtn)).EndInit();
@@ -195,7 +207,6 @@ namespace InventariztionTelecom
             ((System.ComponentModel.ISupportInitialize)(this.deleteRecordBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addRecordBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -214,5 +225,6 @@ namespace InventariztionTelecom
         private System.Windows.Forms.PictureBox convertExcelBtn;
         private System.Windows.Forms.PictureBox sortBtn;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label2;
     }
 }

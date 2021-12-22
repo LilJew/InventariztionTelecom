@@ -14,9 +14,13 @@ using System.Windows.Forms;
 
 namespace InventariztionTelecom
 {
-
+    
     public partial class Login : Form
     {
+        public string MyProperty { get; set; }
+
+
+        MainWindow main = new MainWindow();
 
 
         public Login()
@@ -88,7 +92,7 @@ namespace InventariztionTelecom
 
         }
 
-        private void loginButton_Click(object sender, EventArgs e)
+        public void loginButton_Click(object sender, EventArgs e)
         {
             DataBase db = new DataBase();
             string userLogin = loginField.Text;
@@ -125,8 +129,12 @@ namespace InventariztionTelecom
                 adapter.Fill(table);
                 if (table.Rows.Count > 0)
                 {
+                    
+                    
                     MessageBox.Show("Успешный логин");
-                    userRoleCheck();
+                    main.UserName = this.loginField.Text;
+                    main.Show();
+                    //userRoleCheck();
                     
                 }
 

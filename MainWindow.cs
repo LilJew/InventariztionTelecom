@@ -14,6 +14,13 @@ namespace InventariztionTelecom
 {
     public partial class MainWindow : Form
     {
+        public string UserName
+        { // Не говнокодная передача данных с формы на форму
+            get { return label2.Text; }
+            set { label2.Text = value; }
+         
+        }
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -22,6 +29,8 @@ namespace InventariztionTelecom
         }
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
+
+       
 
         [DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
@@ -52,6 +61,14 @@ namespace InventariztionTelecom
             this.Hide();
             Form login = new Login();
             login.Show();
+        }
+
+        private void MainWindow_Load(object sender, EventArgs e)
+
+        {
+            
+            
+            
         }
     }
 }
