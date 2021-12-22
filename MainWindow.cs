@@ -18,9 +18,15 @@ namespace InventariztionTelecom
         { // Не говнокодная передача данных с формы на форму
             get { return label2.Text; }
             set { label2.Text = value; }
-         
+
         }
-        
+        public string UserRole
+        { // Не говнокодная передача данных с формы на форму
+            get { return userRoleLabel.Text; }
+            set { userRoleLabel.Text = value; }
+
+        }
+
         public MainWindow()
         {
             InitializeComponent();

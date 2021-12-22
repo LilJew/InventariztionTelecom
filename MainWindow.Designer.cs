@@ -30,6 +30,9 @@ namespace InventariztionTelecom
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.userRoleDescription = new System.Windows.Forms.Label();
+            this.userRoleLabel = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.adminRemoveAllRecords = new System.Windows.Forms.PictureBox();
@@ -41,7 +44,6 @@ namespace InventariztionTelecom
             this.deleteRecordBtn = new System.Windows.Forms.PictureBox();
             this.addRecordBtn = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adminRemoveAllRecords)).BeginInit();
@@ -56,6 +58,8 @@ namespace InventariztionTelecom
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.panel1.Controls.Add(this.userRoleDescription);
+            this.panel1.Controls.Add(this.userRoleLabel);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.textBox1);
@@ -72,6 +76,33 @@ namespace InventariztionTelecom
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(841, 578);
             this.panel1.TabIndex = 0;
+            // 
+            // userRoleDescription
+            // 
+            this.userRoleDescription.AutoSize = true;
+            this.userRoleDescription.Location = new System.Drawing.Point(375, 9);
+            this.userRoleDescription.Name = "userRoleDescription";
+            this.userRoleDescription.Size = new System.Drawing.Size(99, 15);
+            this.userRoleDescription.TabIndex = 13;
+            this.userRoleDescription.Text = "Уровень доступа";
+            // 
+            // userRoleLabel
+            // 
+            this.userRoleLabel.AutoSize = true;
+            this.userRoleLabel.Location = new System.Drawing.Point(491, 9);
+            this.userRoleLabel.Name = "userRoleLabel";
+            this.userRoleLabel.Size = new System.Drawing.Size(80, 15);
+            this.userRoleLabel.TabIndex = 12;
+            this.userRoleLabel.Text = "userRoleLabel";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(209, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 15);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "label2";
             // 
             // pictureBox2
             // 
@@ -124,12 +155,12 @@ namespace InventariztionTelecom
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(176, 9);
+            this.linkLabel1.Location = new System.Drawing.Point(701, 9);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(47, 15);
+            this.linkLabel1.Size = new System.Drawing.Size(126, 15);
             this.linkLabel1.TabIndex = 5;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "LogOut";
+            this.linkLabel1.Text = "Выйти из программы";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // label1
@@ -137,9 +168,9 @@ namespace InventariztionTelecom
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 15);
+            this.label1.Size = new System.Drawing.Size(191, 15);
             this.label1.TabIndex = 4;
-            this.label1.Text = "You logged in as:";
+            this.label1.Text = "Вход в программу выполнен как:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
@@ -177,15 +208,6 @@ namespace InventariztionTelecom
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(835, 321);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(132, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 15);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "label2";
             // 
             // MainWindow
             // 
@@ -226,5 +248,7 @@ namespace InventariztionTelecom
         private System.Windows.Forms.PictureBox sortBtn;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label userRoleLabel;
+        private System.Windows.Forms.Label userRoleDescription;
     }
 }

@@ -17,7 +17,7 @@ namespace InventariztionTelecom
     
     public partial class Login : Form
     {
-        public string MyProperty { get; set; }
+        
 
 
         MainWindow main = new MainWindow();
@@ -82,11 +82,16 @@ namespace InventariztionTelecom
             SqlCommand command = new SqlCommand(sql, db.getConnection());
             command.Parameters.Add(nameParam);
             string Form_Role = command.ExecuteScalar().ToString();
+            main.UserRole = Form_Role;
+            
             switch (Form_Role)
             {
-                case "admin": Form.ActiveForm.Close();break;
+                default: Form.ActiveForm.Hide();main.Show(); break;
             }
 
+            command.ExecuteNonQuery();
+            
+            
 
             db.closeConnection();
 
@@ -129,12 +134,12 @@ namespace InventariztionTelecom
                 adapter.Fill(table);
                 if (table.Rows.Count > 0)
                 {
+                    main.UserName = userLogin;
                     
                     
                     MessageBox.Show("Успешный логин");
-                    main.UserName = this.loginField.Text;
-                    main.Show();
-                    //userRoleCheck();
+                    
+                    userRoleCheck();
                     
                 }
 
