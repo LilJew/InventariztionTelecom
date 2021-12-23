@@ -44,6 +44,10 @@ namespace InventariztionTelecom
             this.deleteRecordBtn = new System.Windows.Forms.PictureBox();
             this.addRecordBtn = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Device_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DEVICE_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CABINET_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Responsible_for_device = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adminRemoveAllRecords)).BeginInit();
@@ -203,11 +207,36 @@ namespace InventariztionTelecom
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Device_ID,
+            this.DEVICE_NAME,
+            this.CABINET_ID,
+            this.Responsible_for_device});
             this.dataGridView1.Location = new System.Drawing.Point(3, 27);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(835, 321);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // Device_ID
+            // 
+            this.Device_ID.HeaderText = "ID_Устройства";
+            this.Device_ID.Name = "Device_ID";
+            // 
+            // DEVICE_NAME
+            // 
+            this.DEVICE_NAME.HeaderText = "Описание устройства";
+            this.DEVICE_NAME.Name = "DEVICE_NAME";
+            // 
+            // CABINET_ID
+            // 
+            this.CABINET_ID.HeaderText = "№ Кабинета";
+            this.CABINET_ID.Name = "CABINET_ID";
+            // 
+            // Responsible_for_device
+            // 
+            this.Responsible_for_device.HeaderText = "Ответственный за устройство";
+            this.Responsible_for_device.Name = "Responsible_for_device";
             // 
             // MainWindow
             // 
@@ -218,7 +247,6 @@ namespace InventariztionTelecom
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainWindow";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.MainWindow_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -250,5 +278,9 @@ namespace InventariztionTelecom
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label userRoleLabel;
         private System.Windows.Forms.Label userRoleDescription;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Device_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DEVICE_NAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CABINET_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Responsible_for_device;
     }
 }

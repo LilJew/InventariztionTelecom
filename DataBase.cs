@@ -39,8 +39,10 @@ namespace InventariztionTelecom
             return Convert.ToBase64String(hash);
         }
 
+       
 
+        }
 
     }
    
-}
+

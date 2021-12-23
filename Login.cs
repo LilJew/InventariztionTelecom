@@ -107,12 +107,7 @@ namespace InventariztionTelecom
             
             try
             {
-                if (loginField.Text == "" || passField.Text == "")
-                {
-                    
-                }
-
-
+           
                 string sql = "SELECT * FROM USERS WHERE USERNAME LIKE @userLogin  AND PASSWORD LIKE @userPass";
 
                 db.openConnection();
@@ -137,13 +132,13 @@ namespace InventariztionTelecom
                     main.UserName = userLogin;
                     
                     
-                    MessageBox.Show("Успешный логин");
+                    //MessageBox.Show("Успешный логин");
                     
                     userRoleCheck();
                     
                 }
 
-                else MessageBox.Show("Произошла ошибка при авторизации\n" +
+                else MessageBox.Show("idawiegeqwiihwqrtyi\n" +
                     "Возможные причины:\n" +
                     "1.Проблемы с сетью\n" +
                     "2.Неверно введены данные учётной записи");

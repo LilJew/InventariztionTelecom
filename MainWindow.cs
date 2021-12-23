@@ -14,6 +14,43 @@ namespace InventariztionTelecom
 {
     public partial class MainWindow : Form
     {
+        DataBase db = new DataBase();
+
+
+        private void LoadData()
+        {
+            db.openConnection();
+            string sql = "Select * from device ";
+
+            SqlCommand command = new SqlCommand(sql, db.getConnection());
+            SqlDataReader reader = command.ExecuteReader();
+            List<string[]> data = new List<string[]>();
+
+            while (reader.Read())
+            {
+                data.Add(new string[5]);
+                data[data.Count - 1][0] = reader[0].ToString();
+                data[data.Count - 1][1] = reader[2].ToString();
+                data[data.Count - 1][2] = reader[3].ToString();
+                data[data.Count - 1][3] = reader[4].ToString();
+
+
+
+
+
+            }
+            reader.Close();
+            db.closeConnection();
+            foreach (string[] s in data)
+            {
+
+                dataGridView1.Rows.Add(s);
+            }
+        }
+        
+
+
+
         public string UserName
         { // Не говнокодная передача данных с формы на форму
             get { return label2.Text; }
@@ -27,11 +64,15 @@ namespace InventariztionTelecom
 
         }
 
+
+
+
+
         public MainWindow()
         {
             InitializeComponent();
 
-           
+            LoadData();
         }
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
@@ -69,12 +110,6 @@ namespace InventariztionTelecom
             login.Show();
         }
 
-        private void MainWindow_Load(object sender, EventArgs e)
-
-        {
-            
-            
-            
-        }
+        
     }
 }
