@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,9 +14,13 @@ using System.Windows.Forms;
 
 namespace InventariztionTelecom
 {
-
+    
     public partial class Login : Form
     {
+        
+
+
+        MainWindow main = new MainWindow();
 
 
         public Login()
@@ -69,25 +74,40 @@ namespace InventariztionTelecom
         //Меторд проверяющий Админские привилегии
         public void userRoleCheck()
         {
+            string userName = loginField.Text;
+            DataBase db = new DataBase();
+            db.openConnection();
+            string sql = "SELECT USER_ROLE FROM USERS WHERE USERNAME = @un";
+            SqlParameter nameParam = new SqlParameter("@un", userName);
+            SqlCommand command = new SqlCommand(sql, db.getConnection());
+            command.Parameters.Add(nameParam);
+            string Form_Role = command.ExecuteScalar().ToString();
+            main.UserRole = Form_Role;
+            
+            switch (Form_Role)
+            {
+                default: Form.ActiveForm.Hide();main.Show(); break;
+            }
+
+            command.ExecuteNonQuery();
+            
+            
+
+            db.closeConnection();
 
         }
 
-        private void loginButton_Click(object sender, EventArgs e)
+        public void loginButton_Click(object sender, EventArgs e)
         {
             DataBase db = new DataBase();
             string userLogin = loginField.Text;
-            string userPass = passField.Text;
+            string userPass = db.getHash(passField.Text);
             //string sql = "SELECT * FROM [USERS] WHERE [USERNAME] = @userLogin  AND [PASSWORD] = @userPass";
 
             
             try
             {
-                if (loginField.Text == "" || passField.Text == "")
-                {
-                    
-                }
-
-
+           
                 string sql = "SELECT * FROM USERS WHERE USERNAME LIKE @userLogin  AND PASSWORD LIKE @userPass";
 
                 db.openConnection();
@@ -109,12 +129,16 @@ namespace InventariztionTelecom
                 adapter.Fill(table);
                 if (table.Rows.Count > 0)
                 {
-                    MessageBox.Show("Успешный логин");
+                    main.UserName = userLogin;
+                    
+                    
+                    //MessageBox.Show("Успешный логин");
+                    
                     userRoleCheck();
                     
                 }
 
-                else MessageBox.Show("Произошла ошибка при авторизации\n" +
+                else MessageBox.Show("\n" +
                     "Возможные причины:\n" +
                     "1.Проблемы с сетью\n" +
                     "2.Неверно введены данные учётной записи");
@@ -138,5 +162,6 @@ namespace InventariztionTelecom
 
 
         }
+        
     }
 }

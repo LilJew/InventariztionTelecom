@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
+
 namespace InventariztionTelecom
 {
     public partial class Register : Form
@@ -60,15 +61,15 @@ namespace InventariztionTelecom
 
         private void CreateAccountButton_Click(object sender, EventArgs e)
         {
-            
+            DataBase db = new DataBase();
             string regName = regNameField.Text;
             string regSurname = regSurnameField.Text;
             string regLogin = regLoginField.Text;
-            string regPass = regPassField.Text;
+            string regPass = db.getHash(regPassField.Text);
             string defaultRole = "user";
           
             
-            DataBase db = new DataBase();
+            
 
             if (isUserExists()) return;
             
@@ -91,8 +92,11 @@ namespace InventariztionTelecom
 
                 if (isAllFieldsFilled())
                 {
-                    MessageBox.Show("Успех");
+                    MessageBox.Show("Успех, Войдите в программу под своими данными");
                     command.ExecuteNonQuery();
+                    ActiveForm.Hide();
+                    Login login = new Login();
+                    login.Show();
 
 
                 }
@@ -169,6 +173,8 @@ namespace InventariztionTelecom
         isFalse: return false;
 
         }
+
         
+
     }
 }
