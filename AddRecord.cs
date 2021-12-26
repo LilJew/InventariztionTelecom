@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DraggableControls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,16 +11,19 @@ using System.Windows.Forms;
 
 namespace InventariztionTelecom
 {
-    public partial class AdminMW : Form
+    public partial class AddRecord : Form
     {
-        public AdminMW()
+        public AddRecord()
         {
+        
             InitializeComponent();
+            this.Draggable(true);
+
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void AddRecord_Load(object sender, EventArgs e)
         {
-            Application.Exit();
+            
         }
     }
 }

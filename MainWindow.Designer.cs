@@ -203,6 +203,7 @@ namespace InventariztionTelecom
             this.addRecordBtn.Size = new System.Drawing.Size(86, 48);
             this.addRecordBtn.TabIndex = 1;
             this.addRecordBtn.TabStop = false;
+            this.addRecordBtn.Click += new System.EventHandler(this.addRecordBtn_Click);
             // 
             // dataGridView1
             // 

@@ -1,12 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
@@ -29,17 +23,11 @@ namespace InventariztionTelecom
             while (reader.Read())
             {
                 data.Add(new string[5]);
-                data[data.Count - 1][0] = reader[0].ToString();
-                data[data.Count - 1][1] = reader[1].ToString();
-                data[data.Count - 1][2] = reader[2].ToString();
-                data[data.Count - 1][3] = reader[3].ToString();
+                data[^1][0] = reader[0].ToString();
+                data[^1][1] = reader[1].ToString();
+                data[^1][2] = reader[2].ToString();
+                data[^1][3] = reader[3].ToString();
                 
-
-
-
-
-
-
             }
             reader.Close();
             db.closeConnection();
@@ -115,6 +103,13 @@ namespace InventariztionTelecom
         private void MainWindow_Load(object sender, EventArgs e)
         {
             LoadData();
+        }
+
+        private void addRecordBtn_Click(object sender, EventArgs e)
+        {
+            AddRecord addRecord = new AddRecord();
+            ActiveForm.Hide();
+            addRecord.Show();
         }
     }
 }

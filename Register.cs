@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
+using DraggableControls;
 
 namespace InventariztionTelecom
 {
@@ -18,35 +18,9 @@ namespace InventariztionTelecom
         public Register()
         {
             InitializeComponent();
+            this.Draggable(true);
         }
-        // какая то ёбаная магия заставляющая форму двигаться
-        public const int WM_NCLBUTTONDOWN = 0xA1;
-        public const int HT_CAPTION = 0x2;
-
-        [DllImport("user32.dll")]
-        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-        [DllImport("user32.dll")]
-        public static extern bool ReleaseCapture();
-
-        protected override void OnLoad(EventArgs e)
-        {
-            base.OnLoad(e);
-
-            MouseMove += Form_MouseMove;
-            foreach (Control ctrl in Controls)
-                ctrl.MouseMove += Form_MouseMove;
-        }
-
-        void Form_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                ReleaseCapture();
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
-            }
-        }
-
-
+       
         private void exitBtn_Click(object sender, EventArgs e)
         {
             Application.Exit();
