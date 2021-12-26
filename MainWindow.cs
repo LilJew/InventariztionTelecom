@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
+
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using DraggableControls;
 
 namespace InventariztionTelecom
 {
@@ -61,36 +62,10 @@ namespace InventariztionTelecom
         public MainWindow()
         {
             InitializeComponent();
-
+            this.Draggable(true);
             
         }
-        public const int WM_NCLBUTTONDOWN = 0xA1;
-        public const int HT_CAPTION = 0x2;
-
-       
-
-        [DllImport("user32.dll")]
-        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-        [DllImport("user32.dll")]
-        public static extern bool ReleaseCapture();
-
-        protected override void OnLoad(EventArgs e)
-        {
-            base.OnLoad(e);
-
-            MouseMove += Form_MouseMove;
-            foreach (Control ctrl in Controls)
-                ctrl.MouseMove += Form_MouseMove;
-        }
-
-        void Form_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                ReleaseCapture();
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
-            }
-        }
+        
 
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -111,5 +86,7 @@ namespace InventariztionTelecom
             ActiveForm.Hide();
             addRecord.Show();
         }
+
+        
     }
 }
