@@ -8,7 +8,7 @@ namespace InventariztionTelecom
 {
     public partial class AddRecord : Form
     {
-        MainWindow main = new MainWindow();
+        
         class ComboItem
         {
             public int Id { get; set; }
@@ -65,7 +65,7 @@ namespace InventariztionTelecom
         private void addRecordExit_Click(object sender, EventArgs e)
         {
             ActiveForm.Hide();
-            main.Show();
+            
 
         }
     }

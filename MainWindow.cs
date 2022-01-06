@@ -83,8 +83,8 @@ namespace InventariztionTelecom
         private void addRecordBtn_Click(object sender, EventArgs e)
         {
             AddRecord addRecord = new AddRecord();
-            ActiveForm.Hide();
-            addRecord.Show();
+            
+            addRecord.ShowDialog();
         }
 
         
