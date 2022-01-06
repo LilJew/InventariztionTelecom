@@ -29,199 +29,152 @@ namespace InventariztionTelecom
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.loginField = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.passField = new System.Windows.Forms.TextBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.exitBtn = new System.Windows.Forms.PictureBox();
-            this.loginButton = new System.Windows.Forms.PictureBox();
+            this.loginBtn = new System.Windows.Forms.PictureBox();
+            this.headTile = new System.Windows.Forms.PictureBox();
+            this.titleLabel = new System.Windows.Forms.Label();
             this.regBtn = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.exitBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.loginButton)).BeginInit();
+            this.loginField = new System.Windows.Forms.TextBox();
+            this.passField = new System.Windows.Forms.TextBox();
+            this.loginLabel = new System.Windows.Forms.Label();
+            this.passLabel = new System.Windows.Forms.Label();
+            this.exitButton = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.loginBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.headTile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.regBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exitButton)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox2
+            // loginBtn
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.DodgerBlue;
-            this.pictureBox2.Location = new System.Drawing.Point(-1, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(429, 61);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
+            this.loginBtn.Image = global::InventariztionTelecom.Properties.Resources.login_button2;
+            this.loginBtn.Location = new System.Drawing.Point(95, 356);
+            this.loginBtn.Name = "loginBtn";
+            this.loginBtn.Size = new System.Drawing.Size(166, 63);
+            this.loginBtn.TabIndex = 0;
+            this.loginBtn.TabStop = false;
+            this.loginBtn.Click += new System.EventHandler(this.loginButton_Click);
             // 
-            // label1
+            // headTile
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.FloralWhite;
-            this.label1.Location = new System.Drawing.Point(86, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(194, 37);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Авторизация";
+            this.headTile.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.headTile.Location = new System.Drawing.Point(-2, -3);
+            this.headTile.Name = "headTile";
+            this.headTile.Size = new System.Drawing.Size(417, 50);
+            this.headTile.TabIndex = 1;
+            this.headTile.TabStop = false;
             // 
-            // label2
+            // titleLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.LightGreen;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.Navy;
-            this.label2.Location = new System.Drawing.Point(140, 64);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 37);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Login";
-            // 
-            // loginField
-            // 
-            this.loginField.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.loginField.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.loginField.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.loginField.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.loginField.ForeColor = System.Drawing.Color.Green;
-            this.loginField.Location = new System.Drawing.Point(95, 117);
-            this.loginField.Multiline = true;
-            this.loginField.Name = "loginField";
-            this.loginField.Size = new System.Drawing.Size(175, 38);
-            this.loginField.TabIndex = 4;
-            this.loginField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.LightGreen;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.Navy;
-            this.label3.Location = new System.Drawing.Point(113, 202);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 37);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Пароль";
-            // 
-            // passField
-            // 
-            this.passField.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.passField.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.passField.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.passField.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.passField.ForeColor = System.Drawing.Color.Green;
-            this.passField.Location = new System.Drawing.Point(105, 257);
-            this.passField.Multiline = true;
-            this.passField.Name = "passField";
-            this.passField.PasswordChar = '*';
-            this.passField.Size = new System.Drawing.Size(165, 38);
-            this.passField.TabIndex = 6;
-            this.passField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.LightGreen;
-            this.pictureBox3.BackgroundImage = global::InventariztionTelecom.Properties.Resources.login1;
-            this.pictureBox3.InitialImage = null;
-            this.pictureBox3.Location = new System.Drawing.Point(12, 107);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox3.TabIndex = 7;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.LightGreen;
-            this.pictureBox4.Image = global::InventariztionTelecom.Properties.Resources.password;
-            this.pictureBox4.Location = new System.Drawing.Point(12, 240);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox4.TabIndex = 8;
-            this.pictureBox4.TabStop = false;
-            // 
-            // exitBtn
-            // 
-            this.exitBtn.BackColor = System.Drawing.Color.DodgerBlue;
-            this.exitBtn.BackgroundImage = global::InventariztionTelecom.Properties.Resources.exit;
-            this.exitBtn.Location = new System.Drawing.Point(393, -3);
-            this.exitBtn.Name = "exitBtn";
-            this.exitBtn.Size = new System.Drawing.Size(64, 64);
-            this.exitBtn.TabIndex = 10;
-            this.exitBtn.TabStop = false;
-            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
-            // 
-            // loginButton
-            // 
-            this.loginButton.BackColor = System.Drawing.Color.LightGreen;
-            this.loginButton.Image = global::InventariztionTelecom.Properties.Resources.login_button2;
-            this.loginButton.Location = new System.Drawing.Point(95, 362);
-            this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(170, 71);
-            this.loginButton.TabIndex = 11;
-            this.loginButton.TabStop = false;
-            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
+            this.titleLabel.AutoSize = true;
+            this.titleLabel.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.titleLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.titleLabel.ForeColor = System.Drawing.Color.White;
+            this.titleLabel.Location = new System.Drawing.Point(95, -3);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(194, 37);
+            this.titleLabel.TabIndex = 2;
+            this.titleLabel.Text = "Авторизация";
             // 
             // regBtn
             // 
-            this.regBtn.BackColor = System.Drawing.Color.LightGreen;
-            this.regBtn.Image = global::InventariztionTelecom.Properties.Resources.register1;
-            this.regBtn.Location = new System.Drawing.Point(95, 439);
+            this.regBtn.Image = global::InventariztionTelecom.Properties.Resources.Create_account;
+            this.regBtn.Location = new System.Drawing.Point(95, 435);
             this.regBtn.Name = "regBtn";
-            this.regBtn.Size = new System.Drawing.Size(170, 71);
-            this.regBtn.TabIndex = 12;
+            this.regBtn.Size = new System.Drawing.Size(166, 63);
+            this.regBtn.TabIndex = 3;
             this.regBtn.TabStop = false;
             this.regBtn.Click += new System.EventHandler(this.regBtn_Click);
+            // 
+            // loginField
+            // 
+            this.loginField.Location = new System.Drawing.Point(115, 92);
+            this.loginField.Multiline = true;
+            this.loginField.Name = "loginField";
+            this.loginField.Size = new System.Drawing.Size(100, 23);
+            this.loginField.TabIndex = 4;
+            // 
+            // passField
+            // 
+            this.passField.Location = new System.Drawing.Point(115, 224);
+            this.passField.Multiline = true;
+            this.passField.Name = "passField";
+            this.passField.PasswordChar = '*';
+            this.passField.Size = new System.Drawing.Size(100, 23);
+            this.passField.TabIndex = 5;
+            // 
+            // loginLabel
+            // 
+            this.loginLabel.AutoSize = true;
+            this.loginLabel.BackColor = System.Drawing.Color.Transparent;
+            this.loginLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.loginLabel.ForeColor = System.Drawing.Color.White;
+            this.loginLabel.Location = new System.Drawing.Point(115, 50);
+            this.loginLabel.Name = "loginLabel";
+            this.loginLabel.Size = new System.Drawing.Size(95, 37);
+            this.loginLabel.TabIndex = 6;
+            this.loginLabel.Text = "Логин";
+            // 
+            // passLabel
+            // 
+            this.passLabel.AutoSize = true;
+            this.passLabel.BackColor = System.Drawing.Color.Transparent;
+            this.passLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.passLabel.ForeColor = System.Drawing.Color.White;
+            this.passLabel.Location = new System.Drawing.Point(115, 174);
+            this.passLabel.Name = "passLabel";
+            this.passLabel.Size = new System.Drawing.Size(111, 37);
+            this.passLabel.TabIndex = 7;
+            this.passLabel.Text = "Пароль";
+            // 
+            // exitButton
+            // 
+            this.exitButton.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.exitButton.Image = global::InventariztionTelecom.Properties.Resources.poweroff;
+            this.exitButton.Location = new System.Drawing.Point(365, -3);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(50, 50);
+            this.exitButton.TabIndex = 8;
+            this.exitButton.TabStop = false;
+            this.exitButton.Click += new System.EventHandler(this.exitBtn_Click);
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGreen;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(457, 522);
-            this.Controls.Add(this.regBtn);
-            this.Controls.Add(this.loginButton);
-            this.Controls.Add(this.exitBtn);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
+            this.ClientSize = new System.Drawing.Size(415, 500);
+            this.Controls.Add(this.exitButton);
+            this.Controls.Add(this.passLabel);
+            this.Controls.Add(this.loginLabel);
             this.Controls.Add(this.passField);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.loginField);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.regBtn);
+            this.Controls.Add(this.titleLabel);
+            this.Controls.Add(this.headTile);
+            this.Controls.Add(this.loginBtn);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Login";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "Form2";
-            this.TransparencyKey = System.Drawing.Color.Transparent;
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.exitBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.loginButton)).EndInit();
+            this.Text = "Login";
+            ((System.ComponentModel.ISupportInitialize)(this.loginBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.headTile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.regBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exitButton)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox loginField;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox passField;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox exitBtn;
-        private System.Windows.Forms.PictureBox loginButton;
+
+        private System.Windows.Forms.PictureBox loginBtn;
+        private System.Windows.Forms.PictureBox headTile;
+        private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.PictureBox regBtn;
+        private System.Windows.Forms.TextBox loginField;
+        private System.Windows.Forms.TextBox passField;
+        private System.Windows.Forms.Label loginLabel;
+        private System.Windows.Forms.Label passLabel;
+        private System.Windows.Forms.PictureBox exitButton;
     }
 }

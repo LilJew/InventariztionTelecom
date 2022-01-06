@@ -10,6 +10,7 @@ namespace InventariztionTelecom
 {
     class DataBase
     {
+        
         SqlConnection connection = new SqlConnection(@"Server=localhost\SQLEXPRESS;Database=telecom;Trusted_Connection=True;");
 
         public void openConnection()
